@@ -281,11 +281,11 @@ namespace MathMesher.Tests
         [Test]
         public void MathEngineIsEditorOnlyAndHasNoNuGetRuntimeDependencies()
         {
-            var importer = (PluginImporter)AssetImporter.GetAtPath("Packages/com.kinankomoti.mathmesher/Editor/Plugins/TeXmexsh.MathEngine.dll");
+            var importer = (PluginImporter)AssetImporter.GetAtPath("Packages/com.kinankomoti.mathmesher/Editor/Plugins/MathMesher.Fonts.dll");
             Assert.IsTrue(importer.GetCompatibleWithEditor());
             Assert.IsFalse(importer.GetCompatibleWithAnyPlatform());
             Assert.IsFalse(importer.GetCompatibleWithPlatform(BuildTarget.StandaloneWindows64));
-            var references = System.Reflection.Assembly.Load("TeXmexsh.MathEngine").GetReferencedAssemblies();
+            var references = System.Reflection.Assembly.Load("MathMesher.Fonts").GetReferencedAssemblies();
             Assert.IsFalse(references.Any(a => a.Name == "System.Memory" || a.Name == "System.Runtime.CompilerServices.Unsafe"));
         }
     }

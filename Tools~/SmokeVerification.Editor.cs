@@ -65,7 +65,7 @@ public static class MathMesherVerification
             options = BuildOptions.None
         });
         if (report.summary.result != BuildResult.Succeeded) throw new Exception("Standalone build failed: " + report.summary.result);
-        if (Directory.GetFiles(Path.Combine(output, "Player"), "TeXmexsh.MathEngine.dll", SearchOption.AllDirectories).Length != 0)
+        if (Directory.GetFiles(Path.Combine(output, "Player"), "MathMesher.Fonts.dll", SearchOption.AllDirectories).Length != 0)
             throw new Exception("Math engine was incorrectly included in the Player.");
         File.WriteAllText(Path.Combine(output, "build-result.txt"), "StandaloneWindows64: " + report.summary.result + "; math engine DLL excluded.");
         Debug.Log("MathMesher rendering and standalone build verification passed.");

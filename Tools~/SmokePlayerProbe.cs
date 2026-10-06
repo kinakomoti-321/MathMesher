@@ -17,7 +17,7 @@ public sealed class MathMesherPlayerProbe : MonoBehaviour
             var filters = FindObjectsOfType<MeshFilter>();
             if (filters.Length < 3 || filters.Any(f => !f.sharedMesh || f.sharedMesh.vertexCount == 0)) throw new Exception("Missing generated Mesh in Player.");
             if (FindObjectsOfType<MathMesh>().Length != 0) throw new Exception("Authoring components were not removed during build.");
-            if (AppDomain.CurrentDomain.GetAssemblies().Any(a => a.GetName().Name == "TeXmexsh.MathEngine")) throw new Exception("Math engine loaded in Player.");
+            if (AppDomain.CurrentDomain.GetAssemblies().Any(a => a.GetName().Name == "MathMesher.Fonts")) throw new Exception("Math engine loaded in Player.");
             if (output != null) File.WriteAllText(output, "PASS: 3 meshes present; no authoring component or math engine loaded.");
             Debug.Log("MathMesher Player verification passed.");
             Application.Quit(0);

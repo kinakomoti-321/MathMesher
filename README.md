@@ -120,7 +120,7 @@ go.GetComponent<MeshRenderer>().sharedMaterial = AssetDatabase.LoadAssetAtPath<M
 
 `MathMeshAuthoring.BakeToAsset(component, "Assets/Math.asset")` も利用できます。
 
-0.3.0 でパッケージ名を TeXmexsh から MathMesher に変更しました。パッケージ ID は `com.kinankomoti.mathmesher`、名前空間は `MathMesher` / `MathMesher.Editor`、主なクラスは `MathMesh`、`MathMeshSettings`、`MathMeshGenerator`、`MathMeshAuthoring` です。同梱 DLL の内部名（`TeXmexsh.MathEngine`）だけは旧名のままです。
+0.3.0 でパッケージ名を TeXmexsh から MathMesher に変更しました。パッケージ ID は `com.kinankomoti.mathmesher`、名前空間は `MathMesher` / `MathMesher.Editor`、主なクラスは `MathMesh`、`MathMeshSettings`、`MathMeshGenerator`、`MathMeshAuthoring` です。0.3.1 で同梱 DLL も `MathMesher.Fonts.dll` に作り直しました（中身はフォント読み込み部分と数式フォントのみ）。
 
 ## 仕組み
 

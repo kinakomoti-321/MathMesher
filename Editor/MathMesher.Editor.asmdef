@@ -4,6 +4,6 @@
   "references": ["MathMesher.Runtime"],
   "includePlatforms": ["Editor"],
   "overrideReferences": true,
-  "precompiledReferences": ["TeXmexsh.MathEngine.dll"],
+  "precompiledReferences": ["MathMesher.Fonts.dll"],
   "autoReferenced": true
 }

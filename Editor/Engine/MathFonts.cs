@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using TeXmexsh.Internal.Typography.OpenFont;
-using TeXmexsh.Internal.Typography.OpenFont.MathGlyphs;
-using TeXmexsh.Internal.Typography.Contours;
+using MathMesher.Internal.Typography.OpenFont;
+using MathMesher.Internal.Typography.OpenFont.MathGlyphs;
+using MathMesher.Internal.Typography.Contours;
 
 namespace MathMesher.Editor.Engine
 {
@@ -387,7 +387,7 @@ namespace MathMesher.Editor.Engine
     /// <summary>Loads bundled and user fonts. Thread-affine: call from the Unity main thread.</summary>
     internal static class MathFonts
     {
-        private const string ResourcePrefix = "TeXmexsh.Internal.CSharpMath.Rendering.Reference_Fonts.";
+        private const string ResourcePrefix = "MathMesher.Internal.Fonts.";
         private static FontFace math, blackboard, cyrillic, stix;
         private static string stixPath;
         private static readonly Dictionary<string, (DateTime stamp, FontFace face)> userFonts = new Dictionary<string, (DateTime, FontFace)>();

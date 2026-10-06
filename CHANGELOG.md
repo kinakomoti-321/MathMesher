@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.1 — 2026-10-06
+
+- Removed CSharpMath. The bundled DLL is rebuilt as `Editor/Plugins/MathMesher.Fonts.dll` and contains only Typography's OpenType reader (OpenFont, GlyphOutlineBuilderBase) and the embedded math fonts; namespaces are `MathMesher.Internal.*`. The DLL's `.meta` (GUID) is kept. Size 1.81 MB → 1.44 MB.
+- Third-party notices: dropped CSharpMath and Typography TextBreak, regenerated the per-file license headers of the compiled Typography sources, and added the FreeType credit.
+
 ## 0.3.0 — 2026-10-06
 
 - Renamed the package from TeXmexsh to MathMesher: package id `com.kinankomoti.mathmesher`, namespaces `MathMesher` / `MathMesher.Editor`, classes `MathMesh`, `MathMeshSettings`, `MathMeshGenerator`, `MathMeshAuthoring`, menu **GameObject → MathMesher → Math mesh**, shader `MathMesher/Vertex Color`. Script GUIDs are unchanged. The prebuilt DLL keeps its internal name `TeXmexsh.MathEngine`. Entries below use the new names.
