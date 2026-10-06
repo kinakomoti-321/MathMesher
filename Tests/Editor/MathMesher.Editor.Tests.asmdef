@@ -1,0 +1,9 @@
+{
+  "name": "MathMesher.Editor.Tests",
+  "references": ["MathMesher.Runtime", "MathMesher.Editor"],
+  "includePlatforms": ["Editor"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "overrideReferences": true,
+  "precompiledReferences": ["nunit.framework.dll"],
+  "autoReferenced": false
+}

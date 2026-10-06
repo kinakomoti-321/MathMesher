@@ -1,0 +1,9 @@
+{
+  "name": "MathMesher.Editor",
+  "rootNamespace": "MathMesher.Editor",
+  "references": ["MathMesher.Runtime"],
+  "includePlatforms": ["Editor"],
+  "overrideReferences": true,
+  "precompiledReferences": ["TeXmexsh.MathEngine.dll"],
+  "autoReferenced": true
+}

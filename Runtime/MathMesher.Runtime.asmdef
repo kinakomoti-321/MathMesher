@@ -1,0 +1,8 @@
+{
+  "name": "MathMesher.Runtime",
+  "rootNamespace": "MathMesher",
+  "references": [],
+  "overrideReferences": true,
+  "precompiledReferences": [],
+  "autoReferenced": true
+}

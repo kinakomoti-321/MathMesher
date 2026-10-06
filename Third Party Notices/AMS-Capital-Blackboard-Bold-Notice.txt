@@ -1,0 +1,3 @@
+Name ID 0: Taken from AMSMathematicalSymbol-Medium5, Copyright (c) 1997, 2009 American Mathematical Society (<http://www.ams.org>), with Reserved Font Name MSBM9.
+Extracted by Happypig375, (c) 2018
+Name ID 1: AMS Capital Blackboard Bold

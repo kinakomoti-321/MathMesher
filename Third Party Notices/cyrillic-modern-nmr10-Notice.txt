@@ -1,0 +1,4 @@
+Name ID 0: Copyright (c) 1997, 2009 American Mathematical Society (<http://www.ams.org>), with Reserved Font Name CMR10.
+
+Copyright (c) 2012-2014 Andrey V. Panov
+Name ID 1: Cyrillic Modern

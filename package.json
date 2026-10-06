@@ -1,0 +1,24 @@
+{
+    "name": "com.kinankomoti.mathmesher",
+    "version":  "0.3.0",
+    "displayName": "MathMesher",
+    "description": "Bake TeX / LaTeX math into flat or extruded Unity meshes in the Editor, with live cached preview. Includes its own TeX math typesetter and fonts; no external TeX installation is needed.",
+    "unity": "2022.3",
+    "author": {
+        "name": "kinankomoti"
+    },
+    "keywords": [
+        "tex",
+        "latex",
+        "math",
+        "mesh"
+    ],
+    "dependencies": {},
+    "samples": [
+        {
+            "path": "Samples~/Examples",
+            "description": "Flat quadratic formula and extruded integral meshes, prefabs and scene.",
+            "displayName": "Examples"
+        }
+    ]
+}
