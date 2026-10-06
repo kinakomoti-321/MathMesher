@@ -15,9 +15,11 @@ MathMesher includes the following third-party software and unmodified font files
 
 Since 0.2.0 MathMesher lays out math with its own engine in `Editor/Engine`. The prebuilt DLL is unchanged and still contains the CSharpMath code listed above, but only its Typography font reader and embedded fonts are used.
 
+Portions of this software are based in part on the work of the FreeType Team (via source files of Typography that carry the FreeType License; see `Third Party Notices/FreeType-FTL.txt` and `Original-Source-Headers.txt`).
+
 The fonts' original copyright and family-name metadata is reproduced in their `*-Notice.txt` files. Font data is embedded in `Editor/Plugins/TeXmexsh.MathEngine.dll`.
 
-Changes to the math engine: combined the required managed projects into one .NET Standard 2.1 DLL; prefixed CSharpMath and Typography namespaces with `MathMesher.Internal`; preserved font-resource lookup names with the same prefix; disambiguated `Atom.Range` from `System.Range`; enabled the Unicode prime glyph for `\prime`. No SkiaSharp, native renderer, external TeX executable, or NuGet runtime dependency is included.
+Changes to the math engine: combined the required managed projects into one .NET Standard 2.1 DLL; prefixed CSharpMath and Typography namespaces with `TeXmexsh.Internal` (the package's former name; the DLL has not been rebuilt since the rename); preserved font-resource lookup names with the same prefix; disambiguated `Atom.Range` from `System.Range`; enabled the Unicode prime glyph for `\prime`. No SkiaSharp, native renderer, external TeX executable, or NuGet runtime dependency is included.
 
 LibTessDotNet source namespaces are prefixed with `MathMesher.Internal`. Original copyright/license headers are retained. MathMesher also registers built-in `\dfrac` and `\tfrac` handlers on its private math engine; user-defined macros remain unsupported.
 
