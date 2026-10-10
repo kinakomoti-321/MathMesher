@@ -1,6 +1,6 @@
 {
     "name": "com.kinankomoti.mathmesher",
-    "version": "0.3.2",
+    "version": "1.0.0",
     "vpmDependencies": {
         "com.vrchat.worlds": "3.10.x"
     },
