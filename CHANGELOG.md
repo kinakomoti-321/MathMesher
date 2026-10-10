@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.2 — 2026-10-11
+
+- Licensed MathMesher itself under the MIT License and added the SPDX manifest field.
+- Added Unity Single Pass Instanced stereo macros and instancing shader variants to the built-in MathMesher shader for VR use.
+- Added a GitHub Actions release workflow for the repository layout where the package is stored at the repository root.
+
 ## 0.3.1 — 2026-10-06
 
 - Removed CSharpMath. The bundled DLL is rebuilt as `Editor/Plugins/MathMesher.Fonts.dll` and contains only Typography's OpenType reader (OpenFont, GlyphOutlineBuilderBase) and the embedded math fonts; namespaces are `MathMesher.Internal.*`. The DLL's `.meta` (GUID) is kept. Size 1.81 MB → 1.44 MB.

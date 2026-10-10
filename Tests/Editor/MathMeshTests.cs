@@ -288,5 +288,17 @@ namespace MathMesher.Tests
             var references = System.Reflection.Assembly.Load("MathMesher.Fonts").GetReferencedAssemblies();
             Assert.IsFalse(references.Any(a => a.Name == "System.Memory" || a.Name == "System.Runtime.CompilerServices.Unsafe"));
         }
+
+        [Test]
+        public void DefaultShaderImportsWithoutCompilerErrors()
+        {
+            var shader = AssetDatabase.LoadAssetAtPath<Shader>("Packages/com.kinankomoti.mathmesher/Runtime/Shaders/MathMesh.shader");
+            Assert.IsNotNull(shader);
+            var errors = ShaderUtil.GetShaderMessages(shader)
+                .Where(message => string.Equals(message.severity.ToString(), "Error", StringComparison.OrdinalIgnoreCase))
+                .Select(message => message.message)
+                .ToArray();
+            Assert.IsEmpty(errors, string.Join("\n", errors));
+        }
     }
 }

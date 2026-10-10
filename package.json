@@ -1,11 +1,17 @@
 {
     "name": "com.kinankomoti.mathmesher",
-    "version":  "0.3.1",
+    "version": "0.3.2",
+    "vpmDependencies": {
+        "com.vrchat.worlds": "3.10.x"
+    },
+    "license": "MIT",
     "displayName": "MathMesher",
     "description": "Bake TeX / LaTeX math into flat or extruded Unity meshes in the Editor, with live cached preview. Includes its own TeX math typesetter and fonts; no external TeX installation is needed.",
     "unity": "2022.3",
     "author": {
-        "name": "kinankomoti"
+        "name": "kinankomoti",
+        "email": "kinakomoti743@gmail.com",
+        "url": "https://github.com/kinakomoti-321"
     },
     "keywords": [
         "tex",

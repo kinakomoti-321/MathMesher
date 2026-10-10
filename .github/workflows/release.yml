@@ -1,0 +1,72 @@
+name: Build VPM Release
+
+'on':
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathmesher-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Read and validate package manifest
+        id: package
+        shell: bash
+        run: |
+          set -euo pipefail
+          package_id="$(jq -r '.name' package.json)"
+          package_version="$(jq -r '.version' package.json)"
+          display_name="$(jq -r '.displayName' package.json)"
+
+          test "$package_id" = "com.kinankomoti.mathmesher"
+          test -n "$package_version"
+          test "$package_version" != "null"
+          test -n "$display_name"
+          test "$display_name" != "null"
+
+          if gh release view "$package_version" >/dev/null 2>&1; then
+            echo "Release $package_version already exists. Increment package.json before publishing." >&2
+            exit 1
+          fi
+
+          zip_path="$RUNNER_TEMP/${package_id}-${package_version}.zip"
+          echo "version=$package_version" >> "$GITHUB_OUTPUT"
+          echo "zip_path=$zip_path" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Build package ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          zip -r "${{ steps.package.outputs.zip_path }}" . \
+            -x '.git/*' \
+               '.github/*' \
+               'Website/*'
+
+          unzip -Z1 "${{ steps.package.outputs.zip_path }}" | grep -Fx 'package.json'
+          if unzip -Z1 "${{ steps.package.outputs.zip_path }}" | grep -Eq '(^|/)\.git(/|$)|(^|/)\.github(/|$)'; then
+            echo 'The package ZIP contains repository metadata.' >&2
+            exit 1
+          fi
+
+      - name: Publish GitHub Release
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release create "${{ steps.package.outputs.version }}" \
+            "${{ steps.package.outputs.zip_path }}" \
+            package.json \
+            --target "$GITHUB_SHA" \
+            --title "MathMesher ${{ steps.package.outputs.version }}" \
+            --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}

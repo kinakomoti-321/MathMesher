@@ -1,4 +1,12 @@
-# Validation — 0.2.0
+# Validation
+
+## 0.3.2 — 2026-10-11
+
+- 68 EditMode tests passed in a clean Unity 2022.3.22f1 project, including a check that the Single Pass Instanced shader imports without compiler errors.
+- A local release archive was built with the same exclusions as the GitHub Actions workflow. `package.json` was at the ZIP root, and no `.git` or `.github` entries were present.
+- VRChat SDK Build & Test and in-headset stereo rendering are still pending.
+
+## 0.2.0
 
 Date: 2026-10-05
 
